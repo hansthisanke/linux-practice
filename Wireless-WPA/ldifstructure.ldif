@@ -1,0 +1,70 @@
+dn: ou=staff,dc=wso2demo,dc=com 
+objectClass: organizationalUnit
+ou: staff
+
+
+dn: ou=groups,ou=staff,dc=wso2demo,dc=com
+objectClass: organizationalUnit
+ou: groups
+
+#Create LDAP Users
+
+dn: uid=user01,ou=staff,dc=wso2demo,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: top
+cn: Demo User01
+sn: User01
+displayName: Demo User01
+givenName: Demo
+mail: user01@wso2demo.com 
+userPassword: {SSHA}PGH6zBKpePvHIR3O0jNzwsK4K9/O3CGX
+
+dn: uid=user02,ou=staff,dc=wso2demo,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: top
+cn: Demo User02
+sn: User02
+displayName: Demo User02 
+givenName: Demo
+mail: user02@wso2demo.com 
+userPassword: {SSHA}PGH6zBKpePvHIR3O0jNzwsK4K9/O3CGX
+
+dn: uid=user03,ou=staff,dc=wso2demo,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: top
+cn: Demo User03
+sn: User03
+displayName: Demo User03
+givenName: Demo
+mail: user03@wso2demo.com 
+userPassword: {SSHA}PGH6zBKpePvHIR3O0jNzwsK4K9/O3CGX
+
+dn: uid=user04, ou=staff,dc=wso2demo,dc=com 
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: top
+cn: Demo User4
+sn: User04
+displayName: Demo User04 
+givenName: Demo
+mail: user04@wso2demo.com
+userPassword: {SSHA}PGH6zBKpePvHIR3O0jNzwsK4K9/O3CGX
+
+#Create two Groups
+
+dn: cn=eng,ou=groups, ou=staff,dc=wso2demo,dc=com
+objectClass: groupOfNames
+objectClass: top
+cn: eng
+member: uid=user01,ou=staff,dc=wso2demo,dc=com 
+member: uid=user02, ou=staff,dc=wso2demo, dc=com
+
+dn: cn=sales, ou=groups, ou=staff,dc=wso2demo,dc=com
+objectClass: groupOfNames
+objectClass: top
+cn: sales 
+member: uid=user03, ou=staff,dc=wso2demo, dc=com
+member: uid=user04, ou=staff,dc=wso2demo,dc=com
